@@ -1,0 +1,43 @@
+entity Recipe {
+  name String required
+  description String
+  instructions TextBlob required
+  cookTime Integer
+  servings Integer required
+  createdDate Instant required
+}
+
+entity RecipeToIngredient {
+  quantity Double required
+  unit Unit required
+}
+
+enum Unit {
+  MILLILITER,
+  DECILITER,
+  LITER,
+  MILLIGRAM,
+  GRAM,
+  KILOGRAM,
+  PINCH
+}
+
+entity Ingredient {
+  name String required
+}
+
+entity Category {
+  name String required unique
+}
+
+relationship OneToMany {
+  Recipe{recipeToIngredient} to RecipeToIngredient{recipe}
+}
+
+relationship ManyToOne {
+  RecipeToIngredient{ingredient} to Ingredient
+}
+
+relationship ManyToMany {
+  Recipe{category} to Category{recipe}
+}

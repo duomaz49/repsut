@@ -1,0 +1,33 @@
+{
+  "annotations": {},
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "quantity",
+      "fieldType": "Double",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "unit",
+      "fieldType": "Unit",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "MILLILITER,DECILITER,LITER,MILLIGRAM,GRAM,KILOGRAM,PINCH"
+    }
+  ],
+  "name": "RecipeToIngredient",
+  "relationships": [
+    {
+      "otherEntityName": "ingredient",
+      "relationshipName": "ingredient",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "recipe",
+      "otherEntityRelationshipName": "recipeToIngredient",
+      "relationshipName": "recipe",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ]
+}

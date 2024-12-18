@@ -1,0 +1,21 @@
+{
+  "annotations": {},
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    }
+  ],
+  "name": "Category",
+  "relationships": [
+    {
+      "otherEntityName": "recipe",
+      "otherEntityRelationshipName": "category",
+      "relationshipName": "recipe",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ]
+}
