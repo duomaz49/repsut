@@ -2,7 +2,6 @@ package com.tuomas.repsut.web.rest;
 
 import com.tuomas.repsut.domain.Recipe;
 import com.tuomas.repsut.repository.RecipeRepository;
-import com.tuomas.repsut.service.RecipeService;
 import com.tuomas.repsut.web.rest.errors.BadRequestAlertException;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
@@ -36,11 +35,9 @@ public class RecipeResource {
     private String applicationName;
 
     private final RecipeRepository recipeRepository;
-    private final RecipeService recipeService;
 
-    public RecipeResource(RecipeRepository recipeRepository, RecipeService recipeService) {
+    public RecipeResource(RecipeRepository recipeRepository) {
         this.recipeRepository = recipeRepository;
-        this.recipeService = recipeService;
     }
 
     /**
@@ -56,8 +53,7 @@ public class RecipeResource {
         if (recipe.getId() != null) {
             throw new BadRequestAlertException("A new recipe cannot already have an ID", ENTITY_NAME, "idexists");
         }
-
-        recipe = recipeService.saveOrUpdateRecipeWithIngredients(recipe);
+        recipe = recipeRepository.save(recipe);
         return ResponseEntity.created(new URI("/api/recipes/" + recipe.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, recipe.getId().toString()))
             .body(recipe);
@@ -90,7 +86,7 @@ public class RecipeResource {
             throw new BadRequestAlertException("Entity not found", ENTITY_NAME, "idnotfound");
         }
 
-        recipe = recipeService.saveOrUpdateRecipeWithIngredients(recipe);
+        recipe = recipeRepository.save(recipe);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, recipe.getId().toString()))
             .body(recipe);
