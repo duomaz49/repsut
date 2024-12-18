@@ -98,7 +98,6 @@ module.exports = async options =>
       ),
       new WebpackNotifierPlugin({
         title: 'Repsut',
-        contentImage: path.join(__dirname, 'logo-jhipster.png'),
       }),
     ].filter(Boolean),
   });

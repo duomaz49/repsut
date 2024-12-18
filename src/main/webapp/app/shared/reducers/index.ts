@@ -12,6 +12,7 @@ import entitiesReducers from 'app/entities/reducers';
 import applicationProfile from './application-profile';
 import authentication from './authentication';
 import locale from './locale';
+import recipeMealDB from 'app/client/reducers/recipeSliceMealDB';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 const rootReducer: ReducersMapObject = {
@@ -26,6 +27,7 @@ const rootReducer: ReducersMapObject = {
   password,
   settings,
   loadingBar,
+  recipeMealDB,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   ...entitiesReducers,
 };

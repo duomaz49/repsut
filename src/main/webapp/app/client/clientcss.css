@@ -1,0 +1,30 @@
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.mobile {
+  font-size: 1rem;
+  word-wrap: break-word;
+}
+
+.custom-width {
+  width: 50%;
+}
+
+.custom-search-width {
+  width: 50% !important;
+}
+
+@media (max-width: 768px) {
+  .mobile {
+    font-size: 0.675rem;
+  }
+
+  .custom-width {
+    width: 100%;
+  }
+
+  .custom-search-width {
+    width: 100%;
+  }
+}
