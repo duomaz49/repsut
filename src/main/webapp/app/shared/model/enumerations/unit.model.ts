@@ -1,0 +1,15 @@
+export enum Unit {
+  MILLILITER = 'MILLILITER',
+
+  DECILITER = 'DECILITER',
+
+  LITER = 'LITER',
+
+  MILLIGRAM = 'MILLIGRAM',
+
+  GRAM = 'GRAM',
+
+  KILOGRAM = 'KILOGRAM',
+
+  PINCH = 'PINCH',
+}

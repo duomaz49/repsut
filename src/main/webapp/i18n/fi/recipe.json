@@ -1,0 +1,31 @@
+{
+  "repsutApp": {
+    "recipe": {
+      "home": {
+        "title": "Recipes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Luo Recipe",
+        "createOrEditLabel": "Luo tai muokkaa Recipe",
+        "notFound": "Recipe ei löytynyt"
+      },
+      "created": "Uusi Recipe on luotu, id: {{ param }}",
+      "updated": "Recipe on päivitetty, id: {{ param }}",
+      "deleted": "Recipe on päivitetty, id: {{ param }}",
+      "delete": {
+        "question": "Haluatko varmasti poistaa Recipe {{ id }}?"
+      },
+      "detail": {
+        "title": "Recipe"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "instructions": "Instructions",
+      "cookTime": "Cook Time",
+      "servings": "Servings",
+      "createdDate": "Created Date",
+      "recipeToIngredient": "Recipe To Ingredient",
+      "category": "Category"
+    }
+  }
+}

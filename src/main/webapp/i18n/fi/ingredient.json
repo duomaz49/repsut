@@ -1,0 +1,24 @@
+{
+  "repsutApp": {
+    "ingredient": {
+      "home": {
+        "title": "Ingredients",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Luo Ingredient",
+        "createOrEditLabel": "Luo tai muokkaa Ingredient",
+        "notFound": "Ingredient ei löytynyt"
+      },
+      "created": "Uusi Ingredient on luotu, id: {{ param }}",
+      "updated": "Ingredient on päivitetty, id: {{ param }}",
+      "deleted": "Ingredient on päivitetty, id: {{ param }}",
+      "delete": {
+        "question": "Haluatko varmasti poistaa Ingredient {{ id }}?"
+      },
+      "detail": {
+        "title": "Ingredient"
+      },
+      "id": "ID",
+      "name": "Name"
+    }
+  }
+}

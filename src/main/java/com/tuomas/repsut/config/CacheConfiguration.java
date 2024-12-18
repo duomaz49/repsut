@@ -41,6 +41,13 @@ public class CacheConfiguration {
             createCache(cm, com.tuomas.repsut.repository.UserRepository.USERS_BY_LOGIN_CACHE);
             createCache(cm, com.tuomas.repsut.repository.UserRepository.USERS_BY_EMAIL_CACHE);
             createCache(cm, com.tuomas.repsut.domain.Authority.class.getName());
+            createCache(cm, com.tuomas.repsut.domain.Category.class.getName());
+            createCache(cm, com.tuomas.repsut.domain.Category.class.getName() + ".recipes");
+            createCache(cm, com.tuomas.repsut.domain.Ingredient.class.getName());
+            createCache(cm, com.tuomas.repsut.domain.Recipe.class.getName());
+            createCache(cm, com.tuomas.repsut.domain.Recipe.class.getName() + ".recipeToIngredients");
+            createCache(cm, com.tuomas.repsut.domain.Recipe.class.getName() + ".categories");
+            createCache(cm, com.tuomas.repsut.domain.RecipeToIngredient.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

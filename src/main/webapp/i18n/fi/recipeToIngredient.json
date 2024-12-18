@@ -1,0 +1,27 @@
+{
+  "repsutApp": {
+    "recipeToIngredient": {
+      "home": {
+        "title": "Recipe To Ingredients",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Luo Recipe To Ingredient",
+        "createOrEditLabel": "Luo tai muokkaa Recipe To Ingredient",
+        "notFound": "Recipe To Ingredient ei löytynyt"
+      },
+      "created": "Uusi Recipe To Ingredient on luotu, id: {{ param }}",
+      "updated": "Recipe To Ingredient on päivitetty, id: {{ param }}",
+      "deleted": "Recipe To Ingredient on päivitetty, id: {{ param }}",
+      "delete": {
+        "question": "Haluatko varmasti poistaa Recipe To Ingredient {{ id }}?"
+      },
+      "detail": {
+        "title": "Recipe To Ingredient"
+      },
+      "id": "ID",
+      "quantity": "Quantity",
+      "unit": "Unit",
+      "ingredient": "Ingredient",
+      "recipe": "Recipe"
+    }
+  }
+}
