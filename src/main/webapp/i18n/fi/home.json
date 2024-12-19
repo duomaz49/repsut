@@ -1,7 +1,7 @@
 {
   "home": {
-    "title": "Tervetuloa, Java Hipsteri!",
-    "subtitle": "Tämä on kotisivusi",
+    "title": "Tervetuloa käyttämään sovellusta Repsut!",
+    "intro": "Ainot reseptisovellus, jota tulet koskaan tarvitsemaan!",
     "logged": {
       "message": "Olet kirjautnut käyttäjänä \"{{username}}\"."
     },
