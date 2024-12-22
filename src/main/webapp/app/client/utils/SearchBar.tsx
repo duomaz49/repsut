@@ -1,3 +1,5 @@
+import '../clientcss.css';
+
 import React from 'react';
 import { Input } from 'reactstrap';
 

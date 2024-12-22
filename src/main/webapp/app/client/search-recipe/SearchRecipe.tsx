@@ -1,6 +1,8 @@
+import '../clientcss.css';
+
 import React from 'react';
 
-import RecipeCard from '../RecipeCard';
+import RecipeCard from '../utils/RecipeCard';
 import { useEffect, useState } from 'react';
 import { Alert, Button, Container } from 'reactstrap';
 import { useAppDispatch, useAppSelector } from 'app/config/store';

@@ -61,6 +61,13 @@ export const hasAnyAuthority = (authorities: string[], hasAnyAuthorities: string
   return false;
 };
 
+export const isUser = authorities => {
+  if (authorities && authorities.length !== 0) {
+    return authorities.includes('ROLE_USER') && !authorities.includes('ROLE_ADMIN');
+  }
+  return false;
+};
+
 /**
  * Checks authentication before showing the children and redirects to the
  * login page if the user is not authenticated.

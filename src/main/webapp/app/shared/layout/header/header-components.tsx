@@ -28,3 +28,27 @@ export const Home = () => (
     </NavLink>
   </NavItem>
 );
+
+export const RandomRecipe = () => {
+  return (
+    <NavItem>
+      <NavLink tag={Link} to="/random-recipe" className="d-flex align-items-center">
+        <span>
+          <Translate contentKey="global.menu.randomRecipe">Recipe Inspiration</Translate>
+        </span>
+      </NavLink>
+    </NavItem>
+  );
+};
+
+export const SearchRecipe = () => {
+  return (
+    <NavItem>
+      <NavLink tag={Link} to="/search-recipe" className="d-flex align-items-center">
+        <span>
+          <Translate contentKey="global.menu.searchRecipe">Search for recipe</Translate>
+        </span>
+      </NavLink>
+    </NavItem>
+  );
+};

@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, isFulfilled, isPending, isRejected } from '@reduxjs/toolkit';
-import axios from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 import { IRecipeMealDB } from './recipe-type';
 
 interface RecipeState {
@@ -18,7 +18,7 @@ export const API_URL: string = 'https://www.themealdb.com/api/json/v1/1';
 
 export const fetchRandomRecipe = createAsyncThunk<IRecipeMealDB>('recipeMealDB/fetchRandomRecipe', async (_, { rejectWithValue }) => {
   try {
-    const options: { method: string; url: string } = {
+    const options: AxiosRequestConfig = {
       method: 'GET',
       url: `${API_URL}/random.php`,
     };

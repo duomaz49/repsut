@@ -1,6 +1,8 @@
+import '../clientcss.css';
+
 import React from 'react';
 import { useEffect } from 'react';
-import RecipeCard from '../RecipeCard';
+import RecipeCard from '../utils/RecipeCard';
 import { Container } from 'reactstrap';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 import { fetchRandomRecipe } from 'app/client/reducers/recipeSliceMealDB';

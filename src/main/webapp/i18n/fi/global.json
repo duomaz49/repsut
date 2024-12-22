@@ -4,6 +4,8 @@
     "browsehappy": "Käytät <strong>vanhentunutta</strong> selainta. Ole hyvä ja <a href=\"http://browsehappy.com/?locale=en\">päivitä selaimesi</a> parempaa käyttökokemusta varten.",
     "menu": {
       "home": "Etusivu",
+      "randomRecipe": "Resepti inspiraatio",
+      "searchRecipe": "Etsi reseptiä",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entiteetit",

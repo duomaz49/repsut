@@ -3,12 +3,12 @@
 }
 
 .mobile {
-  font-size: 1rem;
-  word-wrap: break-word;
+  font-size: 1rem !important;
+  word-wrap: break-word !important;
 }
 
 .custom-width {
-  width: 50%;
+  width: 50% !important;
 }
 
 .custom-search-width {
@@ -17,14 +17,14 @@
 
 @media (max-width: 768px) {
   .mobile {
-    font-size: 0.675rem;
+    font-size: 0.675rem !important;
   }
 
   .custom-width {
-    width: 100%;
+    width: 100% !important;
   }
 
   .custom-search-width {
-    width: 100%;
+    width: 100% !important;
   }
 }

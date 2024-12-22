@@ -14,6 +14,8 @@ import PrivateRoute from 'app/shared/auth/private-route';
 import ErrorBoundaryRoutes from 'app/shared/error/error-boundary-routes';
 import PageNotFound from 'app/shared/error/page-not-found';
 import { AUTHORITIES } from 'app/config/constants';
+import RandomRecipe from 'app/client/random-recipe/RandomRecipe';
+import SearchRecipe from 'app/client/search-recipe/SearchRecipe';
 
 const loading = <div>loading ...</div>;
 
@@ -26,7 +28,7 @@ const Admin = Loadable({
   loader: () => import(/* webpackChunkName: "administration" */ 'app/modules/administration'),
   loading: () => loading,
 });
-const AppRoutes = () => {
+const AppRoutes = props => {
   return (
     <div className="view-routes">
       <ErrorBoundaryRoutes>
@@ -62,6 +64,23 @@ const AppRoutes = () => {
           element={
             <PrivateRoute hasAnyAuthorities={[AUTHORITIES.USER]}>
               <EntitiesRoutes />
+            </PrivateRoute>
+          }
+        />
+        <Route path="*" element={<PageNotFound />} />
+        <Route
+          path="random-recipe/*"
+          element={
+            <PrivateRoute hasAnyAuthorities={[AUTHORITIES.USER]}>
+              <RandomRecipe />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="search-recipe/*"
+          element={
+            <PrivateRoute hasAnyAuthorities={[AUTHORITIES.USER]}>
+              <SearchRecipe />
             </PrivateRoute>
           }
         />

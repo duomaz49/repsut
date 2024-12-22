@@ -1,3 +1,5 @@
+import '../clientcss.css';
+
 import React from 'react';
 import { Button, Card, CardBody, CardTitle, Col, ListGroup, ListGroupItem, Row } from 'reactstrap';
 import { IRecipeMealDB } from 'app/client/reducers/recipe-type';

@@ -1,3 +1,5 @@
+import '../clientcss.css';
+
 import React from 'react';
 import type { ReactNode } from 'react';
 import { Modal, ModalHeader, ModalBody } from 'reactstrap';
