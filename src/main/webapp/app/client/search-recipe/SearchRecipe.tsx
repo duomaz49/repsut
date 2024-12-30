@@ -29,7 +29,7 @@ export default function SearchRecipe() {
   };
 
   return (
-    <Container fluid className="mt-5 p-5 d-flex flex-column justify-content-center align-items-center">
+    <Container fluid className="p-3 d-flex flex-column justify-content-center align-items-center">
       <h6 className="text-center mb-4">Search for a recipe inspiration by recipe name</h6>
       <SearchBar query={query} setQuery={setQuery} placeholder={'Search for a recipe'} />
       <Button outline className="mb-4 custom-width" color="success" onClick={getRecipeByName}>

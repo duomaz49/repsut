@@ -21,7 +21,7 @@ export default function RandomRecipe() {
   };
 
   return (
-    <Container fluid className="mt-5 p-5 d-flex justify-content-center align-items-center">
+    <Container fluid className="p-3 d-flex justify-content-center align-items-center">
       {isLoading && <SkeletonLoader length={25} />}
       {!isLoading && !error && (
         <div>
