@@ -52,3 +52,15 @@ export const SearchRecipe = () => {
     </NavItem>
   );
 };
+
+export const OwnRecipes = () => {
+  return (
+    <NavItem>
+      <NavLink tag={Link} to="/own-recipes" className="d-flex align-items-center">
+        <span>
+          <Translate contentKey="global.menu.ownRecipes">Own recipes</Translate>
+        </span>
+      </NavLink>
+    </NavItem>
+  );
+};

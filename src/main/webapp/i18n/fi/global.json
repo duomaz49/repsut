@@ -6,6 +6,7 @@
       "home": "Etusivu",
       "randomRecipe": "Resepti inspiraatio",
       "searchRecipe": "Etsi reseptiä",
+      "ownRecipes": "Omat reseptit",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entiteetit",
