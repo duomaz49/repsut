@@ -23,7 +23,7 @@ export default function RandomRecipe() {
   return (
     <Container fluid className="p-3 d-flex justify-content-center align-items-center">
       {isLoading && <SkeletonLoader length={25} />}
-      {!isLoading && !error && (
+      {!isLoading && !error && recipe && true && Object.keys(recipe).length > 0 && (
         <div>
           <RecipeCard recipe={recipe} getRandomRecipe={getRandomRecipe} isNotSearch={true} />
         </div>
