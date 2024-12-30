@@ -14,21 +14,18 @@ const initialState: RecipeState = {
   isLoading: false,
 };
 
-export const API_URL: string = 'https://cors-anywhere.herokuapp.com/https://www.themealdb.com/api/json/v1/1';
+export const API_URL: string = '/api/recipeMealDB';
 
 export const fetchRandomRecipe = createAsyncThunk<IRecipeMealDB | null, void>('recipeMealDB/fetchRandomRecipe', async (_, { dispatch }) => {
   try {
     const options: AxiosRequestConfig = {
       method: 'GET',
-      url: `${API_URL}/random.php`,
+      url: `${API_URL}/random-recipe`,
     };
     const response = await axios.request(options);
-    if (response.data.meals && response.data.meals.length > 0) {
-      return response.data.meals[0];
-    } else {
-      dispatch(setRecipeError('No recipe found.'));
-      return null;
-    }
+    // eslint-disable-next-line no-console
+    console.log(response.data);
+    return response.data;
   } catch (error) {
     console.error('Error fetching recipes:', error);
     dispatch(setRecipeError('Failed to fetch recipes.'));
@@ -42,16 +39,11 @@ export const fetchByRecipeName = createAsyncThunk<IRecipeMealDB | null, string>(
     try {
       const options: { method: string; params: { s: string }; url: string } = {
         method: 'GET',
-        url: `${API_URL}/search.php`,
+        url: `${API_URL}/search-recipe-by-name`,
         params: { s: name },
       };
       const response = await axios.request(options);
-      if (response.data.meals && response.data.meals.length > 0) {
-        return response.data.meals[0];
-      } else {
-        dispatch(setRecipeError('No recipe found.'));
-        return null;
-      }
+      return response.data;
     } catch (error) {
       console.error('Error fetching recipes:', error);
       dispatch(setRecipeError('Failed to fetch recipes.'));
