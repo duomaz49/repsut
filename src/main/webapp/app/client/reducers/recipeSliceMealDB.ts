@@ -14,7 +14,7 @@ const initialState: RecipeState = {
   isLoading: false,
 };
 
-export const API_URL: string = 'https://www.themealdb.com/api/json/v1/1';
+export const API_URL: string = 'https://cors-anywhere.herokuapp.com/https://www.themealdb.com/api/json/v1/1';
 
 export const fetchRandomRecipe = createAsyncThunk<IRecipeMealDB>('recipeMealDB/fetchRandomRecipe', async (_, { rejectWithValue }) => {
   try {

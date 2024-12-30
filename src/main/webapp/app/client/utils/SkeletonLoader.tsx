@@ -9,10 +9,10 @@ interface SkeletonLoaderProps {
 export default function SkeletonLoader(props: SkeletonLoaderProps) {
   const { length } = props;
   return (
-    <p className="placeholder-glow mt-4">
+    <div className="placeholder-glow mt-4">
       {Array.from({ length }).map((_, i) => (
-        <span key={i} className="placeholder col-12 bg-success m-2 shadow"></span>
+        <span key={i} className="placeholder w-100 bg-success m-2 shadow"></span>
       ))}
-    </p>
+    </div>
   );
 }

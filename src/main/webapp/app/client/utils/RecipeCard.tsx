@@ -15,9 +15,11 @@ export default function RecipeCard(props: RecipeCardProps) {
   return (
     <>
       {isNotSearch && (
-        <Button outline color="success" className="shadow-sm mb-3 custom-width" onClick={() => getRandomRecipe()}>
-          Get Another Recipe
-        </Button>
+        <div className="d-flex justify-content-center">
+          <Button outline color="success" className="shadow-sm mb-3 custom-width" onClick={() => getRandomRecipe()}>
+            Get Another Recipe
+          </Button>
+        </div>
       )}
       <Card key={recipe.idMeal} body outline color="secondary" className="shadow-lg custom-width m-auto p-4">
         <CardTitle tag="h5" className="text-center fw-bold">
