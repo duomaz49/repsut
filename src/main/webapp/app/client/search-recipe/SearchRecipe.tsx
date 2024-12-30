@@ -28,6 +28,8 @@ export default function SearchRecipe() {
     setShowQueryAlert(false);
   };
 
+  // eslint-disable-next-line
+  console.log('error', error);
   return (
     <Container fluid className="p-3 d-flex flex-column justify-content-center align-items-center">
       <h6 className="text-center mb-4">Search for a recipe inspiration by recipe name</h6>
@@ -45,7 +47,7 @@ export default function SearchRecipe() {
           <RecipeCard recipe={recipe} isNotSearch={false} />
         </div>
       )}
-      {error && (
+      {error && recipe === null && (
         <Alert color="danger" className="w-50">
           No recipe found with given name, please search again!
         </Alert>
