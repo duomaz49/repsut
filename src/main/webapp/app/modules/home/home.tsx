@@ -22,8 +22,8 @@ export const Home = () => {
           <img src="../../../content/images/Repsut.png" alt="Repsut brand logo" className="p-4 m-4 repsut" />
         </div>
         {account?.login && (
-          <div>
-            <Alert color="success">
+          <div className="d-flex justify-content-center">
+            <Alert color="success" className="text-center custom-width">
               <Translate contentKey="home.logged.message" interpolate={{ username: account.login }}>
                 You are logged in as user {account.login}.
               </Translate>
