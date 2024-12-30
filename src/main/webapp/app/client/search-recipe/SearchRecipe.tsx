@@ -28,12 +28,10 @@ export default function SearchRecipe() {
     setShowQueryAlert(false);
   };
 
-  // eslint-disable-next-line
-  console.log('error', error);
   return (
     <Container fluid className="p-3 d-flex flex-column justify-content-center align-items-center">
       <h6 className="text-center mb-4">Search for a recipe inspiration by recipe name</h6>
-      <SearchBar query={query} setQuery={setQuery} placeholder={'Search for a recipe'} />
+      <SearchBar query={query} setQuery={setQuery} placeholder={'Search for a recipe'} onSearch={getRecipeByName} />
       <Button outline className="mb-4 custom-width" color="success" onClick={getRecipeByName}>
         Search
       </Button>
