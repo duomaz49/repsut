@@ -36,7 +36,7 @@ export default function SearchRecipe() {
         Search
       </Button>
       {showQueryAlert && (
-        <Alert color="warning" className="w-50">
+        <Alert color="warning" className="custom-width text-center">
           Please enter a recipe name!
         </Alert>
       )}
@@ -46,7 +46,7 @@ export default function SearchRecipe() {
         </div>
       )}
       {error && recipe === null && (
-        <Alert color="danger" className="w-50">
+        <Alert color="danger" className="custom-width text-center">
           No recipe found with given name, please search again!
         </Alert>
       )}
