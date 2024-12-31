@@ -16,21 +16,7 @@ export default function RecipeCard(props: IRecipeCardProps) {
         <strong>Name:</strong> {recipe.name}
       </h6>
       <hr />
-
-      <Col xs={12} md={6} className="mb-3">
-        <ListGroup>
-          <strong>📝 Ingredients:</strong>
-          {recipe.recipeToIngredients.map((obj, i) => (
-            <ListGroupItem key={obj.id}>
-              <span>
-                {i + 1}. {obj.quantity} {obj.unit} {obj.ingredient?.name}
-              </span>
-            </ListGroupItem>
-          ))}
-        </ListGroup>
-      </Col>
-
-      <Col xs={12} md={6} className="mb-3">
+      <Col xs={12} md={6} className="mb-3 mt-4">
         <Card>
           <CardBody>
             {recipe.description && (
@@ -57,7 +43,18 @@ export default function RecipeCard(props: IRecipeCardProps) {
           </CardBody>
         </Card>
       </Col>
-
+      <Col xs={12} md={6} className="mb-3">
+        <ListGroup>
+          <strong>📝 Ingredients:</strong>
+          {recipe.recipeToIngredients.map((obj, i) => (
+            <ListGroupItem key={obj.id}>
+              <span>
+                {i + 1}. {obj.quantity} {obj.unit} {obj.ingredient?.name}
+              </span>
+            </ListGroupItem>
+          ))}
+        </ListGroup>
+      </Col>
       <hr />
       <h6 className="fw-bold">
         <strong>📘Instructions:</strong>
