@@ -58,8 +58,8 @@ public class RecipeResource {
             throw new BadRequestAlertException("A new recipe cannot already have an ID", ENTITY_NAME, "idexists");
         }
         recipe = recipeService.saveOrUpdateRecipeWithIngredients(recipe);
-        return ResponseEntity.created(new URI("/api/recipes/" + recipe.getId()))
-            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, recipe.getId().toString()))
+        return ResponseEntity.created(new URI("/api/recipes/" + recipe.getName()))
+            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, recipe.getName()))
             .body(recipe);
     }
 
@@ -92,7 +92,7 @@ public class RecipeResource {
 
         recipe = recipeService.saveOrUpdateRecipeWithIngredients(recipe);
         return ResponseEntity.ok()
-            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, recipe.getId().toString()))
+            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, recipe.getName()))
             .body(recipe);
     }
 
