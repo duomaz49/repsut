@@ -38,12 +38,12 @@ export default function RecipesList() {
             className="recipe-item bg-transparent border-3 border-success rounded-2 mb-2 shadow-sm text-center"
             onClick={() => openRecipeModal(recipe.id)}
           >
-            {recipe.name}
+            {recipe?.name}
           </ListGroupItem>
         ))}
       </ListGroup>
       <Overlay isOpen={isRecipeModalOpen} toggle={toggleRecipeModal} title="Recipe Details">
-        <RecipeCard recipe={recipes.find(recipe => recipe.id === selectedRecipeId)} />
+        <RecipeCard recipe={recipes.find(recipe => recipe.id === selectedRecipeId)} toggleRecipeModal={toggleRecipeModal} />
       </Overlay>
     </Container>
   );

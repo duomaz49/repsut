@@ -12,7 +12,7 @@
       "updated": "Recipe on päivitetty, id: {{ param }}",
       "deleted": "Recipe on päivitetty, id: {{ param }}",
       "delete": {
-        "question": "Haluatko varmasti poistaa Recipe {{ id }}?"
+        "question": "Haluatko varmasti poistaa Recipe {{ name }}?"
       },
       "detail": {
         "title": "Recipe"
