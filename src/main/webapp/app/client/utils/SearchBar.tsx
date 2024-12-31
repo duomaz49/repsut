@@ -7,7 +7,7 @@ interface SearchBarProps {
   query: string;
   setQuery: (query: string) => void;
   placeholder?: string;
-  onSearch: () => void;
+  onSearch?: () => void;
 }
 
 export default function SearchBar(props: SearchBarProps) {
@@ -30,7 +30,7 @@ export default function SearchBar(props: SearchBarProps) {
       placeholder={placeholder}
       onChange={handleChange}
       value={query}
-      onKeyDown={handleKeyDown}
+      onKeyDown={onSearch ? handleKeyDown : undefined}
     />
   );
 }
