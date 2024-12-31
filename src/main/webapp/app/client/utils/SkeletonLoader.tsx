@@ -2,11 +2,11 @@ import '../clientcss.css';
 
 import React from 'react';
 
-interface SkeletonLoaderProps {
+interface ISkeletonLoaderProps {
   length: number;
 }
 
-export default function SkeletonLoader(props: SkeletonLoaderProps) {
+export default function SkeletonLoader(props: ISkeletonLoaderProps) {
   const { length } = props;
   return (
     <div className="placeholder-glow mt-4">

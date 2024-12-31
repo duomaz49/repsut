@@ -4,11 +4,11 @@ import React from 'react';
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 import { IRecipe } from 'app/shared/model/recipe.model';
 
-interface CreateOrEditRecipeProps {
+interface ICreateOrEditRecipeProps {
   recipe?: IRecipe;
   saveRecipe: () => void;
 }
-export default function CreateOrEditRecipe(props: CreateOrEditRecipeProps) {
+export default function CreateOrEditRecipe(props: ICreateOrEditRecipeProps) {
   const { recipe, saveRecipe } = props;
   return (
     <Form onSubmit={saveRecipe}>

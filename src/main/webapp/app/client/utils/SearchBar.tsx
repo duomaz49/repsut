@@ -3,14 +3,14 @@ import '../clientcss.css';
 import React from 'react';
 import { Input } from 'reactstrap';
 
-interface SearchBarProps {
+interface ISearchBarProps {
   query: string;
   setQuery: (query: string) => void;
   placeholder?: string;
   onSearch?: () => void;
 }
 
-export default function SearchBar(props: SearchBarProps) {
+export default function SearchBar(props: ISearchBarProps) {
   const { query, setQuery, placeholder, onSearch } = props;
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newQuery = e.target.value;

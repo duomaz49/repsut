@@ -4,13 +4,13 @@ import React from 'react';
 import { Button, Card, CardBody, CardTitle, Col, ListGroup, ListGroupItem, Row } from 'reactstrap';
 import { IRecipeMealDB } from 'app/client/reducers/recipe-type';
 
-interface RecipeCardProps {
+interface IRecipeCardProps {
   recipe: IRecipeMealDB;
   getRandomRecipe?: () => void;
   isNotSearch: boolean;
 }
 
-export default function MealDBRecipeCard(props: RecipeCardProps) {
+export default function MealDBRecipeCard(props: IRecipeCardProps) {
   const { recipe, getRandomRecipe, isNotSearch } = props;
   return (
     <>

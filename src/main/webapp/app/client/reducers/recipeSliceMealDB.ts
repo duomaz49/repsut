@@ -2,13 +2,13 @@ import { createAsyncThunk, createSlice, isFulfilled, isPending } from '@reduxjs/
 import axios, { AxiosRequestConfig } from 'axios';
 import { IRecipeMealDB } from './recipe-type';
 
-interface RecipeState {
+interface IRecipeState {
   recipe: IRecipeMealDB | null;
   error: boolean;
   isLoading: boolean;
 }
 
-const initialState: RecipeState = {
+const initialState: IRecipeState = {
   recipe: null,
   error: false,
   isLoading: false,
