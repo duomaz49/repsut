@@ -36,7 +36,7 @@ export default function MealDBRecipeCard(props: RecipeCardProps) {
             </div>
           </Col>
           <Col xs={12} md={6} className="mb-3 mt-2">
-            <h6 className="fw-bold">📝 Ingredients</h6>
+            <h6 className="fw-bold">📝 Ingredients:</h6>
             <ListGroup flush className="text-start w-auto n">
               {Array.from({ length: 20 }, (_, i) => i + 1).map(index => {
                 const ingredient = recipe[`strIngredient${index}`];
@@ -52,7 +52,7 @@ export default function MealDBRecipeCard(props: RecipeCardProps) {
           </Col>
         </Row>
         <CardBody>
-          <h6 className="fw-bold">📘 Instructions</h6>
+          <h6 className="fw-bold">📘 Instructions:</h6>
           <div className="text-start m-2 ">{recipe.strInstructions}</div>
           {recipe.strYoutube && (
             <Button outline block color="info" className="shadow-sm mt-3" href={recipe.strYoutube} target="_blank">
