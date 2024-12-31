@@ -45,7 +45,7 @@ public class Recipe implements Serializable {
     @Column(name = "created_date", nullable = false)
     private Instant createdDate;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "recipe")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties(value = { "recipe" }, allowSetters = true)
     private Set<RecipeToIngredient> recipeToIngredients = new HashSet<>();
 
