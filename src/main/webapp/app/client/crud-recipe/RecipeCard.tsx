@@ -26,9 +26,9 @@ export default function RecipeCard(props: IRecipeCardProps) {
         </div>
       </Col>
       <Col xs={12} md={6} className="mb-3">
-        <div>Description: {recipe.description}</div>
-        <div>Servings: {recipe.servings}</div>
-        <div>Cook time: {recipe.cookTime}</div>
+        {recipe.description && <div>Description: {recipe.description}</div>}
+        {recipe.servings && <div>Servings: {recipe.servings}</div>}
+        {recipe.cookTime && <div>Cook time: {recipe.cookTime}</div>}
         <div>Created: {convertDateTimeFromServer(recipe.createdDate)}</div>
         <div>Categories: {recipe.categories?.map(category => category.name).join(', ')}</div>
       </Col>
