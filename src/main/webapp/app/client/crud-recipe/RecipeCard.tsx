@@ -16,22 +16,18 @@ export default function RecipeCard(props: IRecipeCardProps) {
         <strong>Name:</strong> {recipe.name}
       </h6>
       <hr />
-      <Col xs={12} md={6} className="mb-3 mt-4">
+      <Col xs={12} md={6} className="mb-3">
+        <strong>🎯 Information:</strong>
         <Card>
           <CardBody>
-            {recipe.description && (
-              <div>
-                <strong>Description:</strong> {recipe.description}
-              </div>
-            )}
             {recipe.servings && (
               <div>
-                <strong>Servings:</strong> {recipe.servings}
+                <strong>Servings:</strong> {recipe.servings} people
               </div>
             )}
             {recipe.cookTime && (
               <div>
-                <strong>Cook time:</strong> {recipe.cookTime}
+                <strong>Cook time:</strong> {recipe.cookTime} minutes
               </div>
             )}
             <div>
@@ -40,6 +36,11 @@ export default function RecipeCard(props: IRecipeCardProps) {
             <div>
               <strong>Categories:</strong> {recipe.categories?.map(category => category.name).join(', ')}
             </div>
+            {recipe.description && (
+              <div>
+                <strong>Description:</strong> {recipe.description}
+              </div>
+            )}
           </CardBody>
         </Card>
       </Col>
