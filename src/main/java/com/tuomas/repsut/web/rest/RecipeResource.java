@@ -194,9 +194,17 @@ public class RecipeResource {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteRecipe(@PathVariable("id") Long id) {
         LOG.debug("REST request to delete Recipe : {}", id);
+        Optional<Recipe> recipe = recipeRepository.findById(id);
         recipeRepository.deleteById(id);
         return ResponseEntity.noContent()
-            .headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString()))
+            .headers(
+                HeaderUtil.createEntityDeletionAlert(
+                    applicationName,
+                    true,
+                    ENTITY_NAME,
+                    recipe.isPresent() ? recipe.get().getName() : id.toString()
+                )
+            )
             .build();
     }
 }
