@@ -25,7 +25,7 @@ export default function SearchBar(props: SearchBarProps) {
 
   return (
     <Input
-      className="custom-search-width shadow-sm mb-4"
+      className="custom-search-width shadow-sm mb-3"
       type="search"
       placeholder={placeholder}
       onChange={handleChange}

@@ -6,11 +6,11 @@ import DeleteRecipe from 'app/client/crud-recipe/DeleteRecipe';
 
 interface IRecipeCardProps {
   recipe: IRecipe;
-  toggleRecipeModal?: () => void;
+  toggleRecipeDetailModal?: () => void;
 }
 
 export default function RecipeCard(props: IRecipeCardProps) {
-  const { recipe, toggleRecipeModal } = props;
+  const { recipe, toggleRecipeDetailModal } = props;
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState<boolean>(false);
   const toggleDeleteModal = () => setIsDeleteModalOpen(!isDeleteModalOpen);
 
@@ -72,7 +72,7 @@ export default function RecipeCard(props: IRecipeCardProps) {
         recipe={recipe}
         isDeleteModalOpen={isDeleteModalOpen}
         toggleDeleteModal={toggleDeleteModal}
-        toggleRecipeModal={toggleRecipeModal}
+        toggleRecipeModal={toggleRecipeDetailModal}
       />
     </Row>
   );

@@ -18,7 +18,6 @@ export default function Overlay(props: OverlayProps) {
       <ModalHeader toggle={toggle}>{title}</ModalHeader>
       <ModalBody
         style={{
-          maxHeight: 'calc(100vh - 210px)',
           overflowY: 'auto',
           overflowX: 'hidden',
         }}

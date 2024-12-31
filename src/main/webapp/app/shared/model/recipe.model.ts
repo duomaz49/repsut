@@ -8,7 +8,7 @@ export interface IRecipe {
   description?: string | null;
   instructions?: string;
   cookTime?: number | null;
-  servings?: number;
+  servings?: number | null;
   createdDate?: dayjs.Dayjs;
   categories?: ICategory[] | null;
   recipeToIngredients?: IRecipeToIngredient[] | null;
