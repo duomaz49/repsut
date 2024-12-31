@@ -2,7 +2,7 @@ import '../clientcss.css';
 
 import React from 'react';
 
-import RecipeCard from '../utils/RecipeCard';
+import MealDBRecipeCard from '../utils/MealDBRecipeCard';
 import { useEffect, useState } from 'react';
 import { Alert, Button, Container } from 'reactstrap';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
@@ -42,7 +42,7 @@ export default function SearchRecipe() {
       )}
       {!isLoading && !error && recipe && Object.keys(recipe).length > 0 && (
         <div>
-          <RecipeCard recipe={recipe} isNotSearch={false} />
+          <MealDBRecipeCard recipe={recipe} isNotSearch={false} />
         </div>
       )}
       {error && recipe === null && (

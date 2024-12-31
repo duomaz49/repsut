@@ -2,7 +2,7 @@ import '../clientcss.css';
 
 import React from 'react';
 import { useEffect } from 'react';
-import RecipeCard from '../utils/RecipeCard';
+import MealDBRecipeCard from '../utils/MealDBRecipeCard';
 import { Container } from 'reactstrap';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 import { fetchRandomRecipe } from 'app/client/reducers/recipeSliceMealDB';
@@ -25,7 +25,7 @@ export default function RandomRecipe() {
       {isLoading && <SkeletonLoader length={25} />}
       {!isLoading && !error && recipe && true && Object.keys(recipe).length > 0 && (
         <div>
-          <RecipeCard recipe={recipe} getRandomRecipe={getRandomRecipe} isNotSearch={true} />
+          <MealDBRecipeCard recipe={recipe} getRandomRecipe={getRandomRecipe} isNotSearch={true} />
         </div>
       )}
     </Container>

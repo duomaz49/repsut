@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
 import { ICategory } from 'app/shared/model/category.model';
+import { IRecipeToIngredient } from 'app/shared/model/recipe-to-ingredient.model';
 
 export interface IRecipe {
   id?: number;
@@ -10,6 +11,7 @@ export interface IRecipe {
   servings?: number;
   createdDate?: dayjs.Dayjs;
   categories?: ICategory[] | null;
+  recipeToIngredients?: IRecipeToIngredient[] | null;
 }
 
 export const defaultValue: Readonly<IRecipe> = {};

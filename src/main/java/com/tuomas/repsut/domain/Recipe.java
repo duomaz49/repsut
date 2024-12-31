@@ -46,11 +46,11 @@ public class Recipe implements Serializable {
     @Column(name = "created_date", nullable = false)
     private Instant createdDate;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "recipe")
-    @JsonIgnoreProperties(value = { "ingredient", "recipe" }, allowSetters = true)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "recipe")
+    @JsonIgnoreProperties(value = { "recipe" }, allowSetters = true)
     private Set<RecipeToIngredient> recipeToIngredients = new HashSet<>();
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
         name = "rel_recipe__category",
         joinColumns = @JoinColumn(name = "recipe_id"),

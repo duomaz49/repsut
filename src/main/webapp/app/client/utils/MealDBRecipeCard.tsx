@@ -10,7 +10,7 @@ interface RecipeCardProps {
   isNotSearch: boolean;
 }
 
-export default function RecipeCard(props: RecipeCardProps) {
+export default function MealDBRecipeCard(props: RecipeCardProps) {
   const { recipe, getRandomRecipe, isNotSearch } = props;
   return (
     <>
