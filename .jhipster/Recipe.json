@@ -24,8 +24,7 @@
     },
     {
       "fieldName": "servings",
-      "fieldType": "Integer",
-      "fieldValidateRules": ["required"]
+      "fieldType": "Integer"
     },
     {
       "fieldName": "createdDate",

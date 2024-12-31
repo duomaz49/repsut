@@ -3,7 +3,7 @@ entity Recipe {
   description String
   instructions TextBlob required
   cookTime Integer
-  servings Integer required
+  servings Integer
   createdDate Instant required
 }
 

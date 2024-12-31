@@ -38,8 +38,7 @@ public class Recipe implements Serializable {
     @Column(name = "cook_time")
     private Integer cookTime;
 
-    @NotNull
-    @Column(name = "servings", nullable = false)
+    @Column(name = "servings")
     private Integer servings;
 
     @NotNull
