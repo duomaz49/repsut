@@ -73,7 +73,7 @@ export default function IngredientAccordion(props: IIngredientAccordionProps) {
                   value={ingredient.name}
                   placeholder="Name"
                   type="text"
-                  onChange={e => handleChange(ingredient.id, e)}
+                  onChange={e => handleChange(i, e)}
                   required
                 />
               </FormGroup>
@@ -87,7 +87,7 @@ export default function IngredientAccordion(props: IIngredientAccordionProps) {
                   value={ingredient.quantity}
                   placeholder="Quantity"
                   type="number"
-                  onChange={e => handleChange(ingredient.id, e)}
+                  onChange={e => handleChange(i, e)}
                   required
                 />
               </FormGroup>
@@ -96,14 +96,7 @@ export default function IngredientAccordion(props: IIngredientAccordionProps) {
                 <Label for="unit" className="fw-bold ms-1">
                   Unit
                 </Label>
-                <Input
-                  id="unit"
-                  name="unit"
-                  placeholder="Unit"
-                  value={ingredient.unit}
-                  type="select"
-                  onChange={e => handleChange(ingredient.id, e)}
-                >
+                <Input id="unit" name="unit" placeholder="Unit" value={ingredient.unit} type="select" onChange={e => handleChange(i, e)}>
                   <option value="" disabled>
                     Select Unit
                   </option>

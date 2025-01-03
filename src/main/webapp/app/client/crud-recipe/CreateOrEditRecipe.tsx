@@ -32,14 +32,14 @@ export default function CreateOrEditRecipe(props: ICreateOrEditRecipeProps) {
   useEffect(() => {
     if (existingRecipe) {
       setRecipe(existingRecipe);
-      const combinedIngredients = existingRecipe.recipeToIngredients?.map((recipeToIngredient: IRecipeToIngredient) => ({
+      const flattenIngredients = existingRecipe.recipeToIngredients?.map((recipeToIngredient: IRecipeToIngredient) => ({
         ...recipeToIngredient,
         id: recipeToIngredient.ingredient?.id,
         name: recipeToIngredient.ingredient?.name,
         unit: recipeToIngredient.unit,
         quantity: recipeToIngredient.quantity,
       }));
-      setIngredients(combinedIngredients || []);
+      setIngredients(flattenIngredients || []);
     }
   }, [existingRecipe]);
 
