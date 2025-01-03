@@ -28,6 +28,9 @@ export default function RecipesList() {
 
   const openCreateOrEditModal = (id: number) => {
     setSelectedRecipeId(id);
+    if (id) {
+      toggleRecipeDetailModal();
+    }
     toggleCreateOrEditModal();
   };
 
@@ -44,7 +47,7 @@ export default function RecipesList() {
       <Button
         color="success"
         className="d-flex justify-content-center align-items-center custom-width mb-3"
-        onClick={toggleCreateOrEditModal}
+        onClick={() => openCreateOrEditModal(null)}
       >
         <FaPlus color="white" className="me-1" /> Add Recipe
       </Button>
@@ -60,10 +63,17 @@ export default function RecipesList() {
         ))}
       </ListGroup>
       <Overlay isOpen={isRecipeModalOpen} toggle={toggleRecipeDetailModal} title="Recipe Details">
-        <RecipeCard recipe={recipes.find(recipe => recipe.id === selectedRecipeId)} toggleRecipeDetailModal={toggleRecipeDetailModal} />
+        <RecipeCard
+          recipe={recipes.find(recipe => recipe.id === selectedRecipeId)}
+          toggleRecipeDetailModal={toggleRecipeDetailModal}
+          openCreateOrEditModal={openCreateOrEditModal}
+        />
       </Overlay>
       <Overlay isOpen={isCreateOrEditModalOpen} toggle={toggleCreateOrEditModal} title="Create or Edit Recipe">
-        <CreateOrEditRecipe existingRecipe={recipes.find(recipe => recipe.id === selectedRecipeId)} saveRecipe={() => {}} />
+        <CreateOrEditRecipe
+          existingRecipe={recipes.find(recipe => recipe.id === selectedRecipeId)}
+          toggleCreateOrEditModal={toggleCreateOrEditModal}
+        />
       </Overlay>
     </Container>
   );

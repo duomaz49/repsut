@@ -7,11 +7,10 @@ import { Unit } from 'app/shared/model/enumerations/unit.model';
 interface IIngredientAccordionProps {
   ingredients: any[];
   setIngredients: (ingredients: object[]) => void;
-  create: boolean;
 }
 
 export default function IngredientAccordion(props: IIngredientAccordionProps) {
-  const { ingredients, setIngredients, create } = props;
+  const { ingredients, setIngredients } = props;
 
   const [open, setOpen] = useState<string>('');
   const toggleAccordion = (id: string) => {
@@ -47,11 +46,9 @@ export default function IngredientAccordion(props: IIngredientAccordionProps) {
 
   return (
     <div>
-      {create && (
-        <Button color="warning" outline block className="mb-2" onClick={addAccordion}>
-          Add ingredient <FontAwesomeIcon icon={faPlus} />
-        </Button>
-      )}
+      <Button color="warning" outline block className="mb-2" onClick={addAccordion}>
+        Add ingredient <FontAwesomeIcon icon={faPlus} />
+      </Button>
       <Accordion open={open} toggle={toggleAccordion} className="mb-2">
         {ingredients.map((ingredient, i) => (
           <AccordionItem key={i}>
@@ -60,11 +57,9 @@ export default function IngredientAccordion(props: IIngredientAccordionProps) {
                 <span>
                   {ingredient.name ?? null} {ingredient.quantity ?? null} {ingredient.unit.toLowerCase() ?? null}
                 </span>
-                {create && (
-                  <div className="btn btn-outline-danger btn-sm ms-3 pointer" role="button" onClick={() => deleteAccordion(ingredient.id)}>
-                    <FontAwesomeIcon icon={faTrash} />
-                  </div>
-                )}
+                <div className="btn btn-outline-danger btn-sm ms-3 pointer" role="button" onClick={() => deleteAccordion(ingredient.id)}>
+                  <FontAwesomeIcon icon={faTrash} />
+                </div>
               </div>
             </AccordionHeader>
             <AccordionBody accordionId={i.toString()}>

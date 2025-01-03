@@ -8,9 +8,9 @@
         "createOrEditLabel": "Create or edit a Recipe",
         "notFound": "No Recipes found"
       },
-      "created": "A new Recipe is created with identifier {{ param }}",
-      "updated": "A Recipe is updated with identifier {{ param }}",
-      "deleted": "A Recipe is deleted with identifier {{ param }}",
+      "created": "A new Recipe is created with name {{ param }}",
+      "updated": "A Recipe is updated with name {{ param }}",
+      "deleted": "A Recipe is deleted with name {{ param }}",
       "delete": {
         "question": "Are you sure you want to delete Recipe {{ name }}?"
       },

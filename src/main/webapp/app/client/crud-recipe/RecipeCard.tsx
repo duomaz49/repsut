@@ -7,10 +7,11 @@ import DeleteRecipe from 'app/client/crud-recipe/DeleteRecipe';
 interface IRecipeCardProps {
   recipe: IRecipe;
   toggleRecipeDetailModal?: () => void;
+  openCreateOrEditModal?: (id: number) => void;
 }
 
 export default function RecipeCard(props: IRecipeCardProps) {
-  const { recipe, toggleRecipeDetailModal } = props;
+  const { recipe, toggleRecipeDetailModal, openCreateOrEditModal } = props;
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState<boolean>(false);
   const toggleDeleteModal = () => setIsDeleteModalOpen(!isDeleteModalOpen);
 
@@ -54,7 +55,7 @@ export default function RecipeCard(props: IRecipeCardProps) {
           {recipe?.recipeToIngredients.map((obj, i) => (
             <ListGroupItem key={obj.id}>
               <span>
-                {i + 1}. {obj.quantity} {obj.unit} {obj.ingredient?.name}
+                {i + 1}. {obj.quantity} {obj.unit.toLowerCase()} {obj.ingredient?.name}
               </span>
             </ListGroupItem>
           ))}
@@ -65,9 +66,14 @@ export default function RecipeCard(props: IRecipeCardProps) {
         <strong>📘Instructions:</strong>
       </h6>
       <div>{recipe?.instructions}</div>
-      <Button outline block color="danger" className="shadow-sm mt-3" onClick={toggleDeleteModal}>
-        🗑️ Delete Recipe
-      </Button>
+      <div className="d-flex justify-content-between">
+        <Button outline color="danger" className="shadow-sm mt-3" onClick={toggleDeleteModal}>
+          🗑️ Delete Recipe
+        </Button>
+        <Button outline color="info" className="shadow-sm mt-3" onClick={() => openCreateOrEditModal(recipe.id)}>
+          ✏️ Edit Recipe
+        </Button>
+      </div>
       <DeleteRecipe
         recipe={recipe}
         isDeleteModalOpen={isDeleteModalOpen}
