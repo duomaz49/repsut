@@ -1,3 +1,7 @@
+.pointer {
+  cursor: pointer;
+}
+
 .recipe-item {
   cursor: pointer;
   transition:

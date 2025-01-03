@@ -63,7 +63,7 @@ export default function RecipesList() {
         <RecipeCard recipe={recipes.find(recipe => recipe.id === selectedRecipeId)} toggleRecipeDetailModal={toggleRecipeDetailModal} />
       </Overlay>
       <Overlay isOpen={isCreateOrEditModalOpen} toggle={toggleCreateOrEditModal} title="Create or Edit Recipe">
-        <CreateOrEditRecipe recipe={recipes.find(recipe => recipe.id === selectedRecipeId)} saveRecipe={() => {}} />
+        <CreateOrEditRecipe existingRecipe={recipes.find(recipe => recipe.id === selectedRecipeId)} saveRecipe={() => {}} />
       </Overlay>
     </Container>
   );

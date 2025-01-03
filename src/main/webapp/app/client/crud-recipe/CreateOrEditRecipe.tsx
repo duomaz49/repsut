@@ -1,15 +1,29 @@
 import '../clientcss.css';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 import { IRecipe } from 'app/shared/model/recipe.model';
+import IngredientAccordion from 'app/client/crud-recipe/IngredientAccordion';
+import dayjs from 'dayjs';
 
 interface ICreateOrEditRecipeProps {
-  recipe?: IRecipe;
+  existingRecipe?: IRecipe;
   saveRecipe: () => void;
 }
+
 export default function CreateOrEditRecipe(props: ICreateOrEditRecipeProps) {
-  const { recipe, saveRecipe } = props;
+  const { existingRecipe, saveRecipe } = props;
+  const [ingredients, setIngredients] = useState<object[]>([]);
+  const [recipe, setRecipe] = useState<IRecipe>({
+    name: '',
+    description: '',
+    cookTime: 0,
+    servings: 0,
+    createdDate: dayjs(),
+    instructions: '',
+    ...existingRecipe,
+  });
+
   return (
     <Form onSubmit={saveRecipe}>
       <FormGroup>
@@ -36,13 +50,13 @@ export default function CreateOrEditRecipe(props: ICreateOrEditRecipeProps) {
         </Label>
         <Input id="servings" name="servings" placeholder="Servings" type="number" />
       </FormGroup>
-
       <FormGroup>
         <Label for="instructions" className="fw-bold ms-1">
           Instructions
         </Label>
         <Input required id="instructions" name="instructions" placeholder="Instructions*" type="textarea" />
       </FormGroup>
+      <IngredientAccordion create={true} ingredients={ingredients} setIngredients={setIngredients} />
       <Button outline color="success" block>
         Submit
       </Button>
