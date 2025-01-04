@@ -4,6 +4,7 @@ import { Translate } from 'react-jhipster';
 import { NavItem, NavLink, NavbarBrand } from 'reactstrap';
 import { NavLink as Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch, faDice, faFolder } from '@fortawesome/free-solid-svg-icons';
 
 export const BrandIcon = props => (
   <div {...props} className="brand-icon">
@@ -33,6 +34,7 @@ export const RandomRecipe = () => {
   return (
     <NavItem>
       <NavLink tag={Link} to="/random-recipe" className="d-flex align-items-center">
+        <FontAwesomeIcon icon={faDice} className="me-1" />
         <span>
           <Translate contentKey="global.menu.randomRecipe">Recipe Inspiration</Translate>
         </span>
@@ -45,6 +47,7 @@ export const SearchRecipe = () => {
   return (
     <NavItem>
       <NavLink tag={Link} to="/search-recipe" className="d-flex align-items-center">
+        <FontAwesomeIcon icon={faSearch} className="me-1" />
         <span>
           <Translate contentKey="global.menu.searchRecipe">Search for recipe</Translate>
         </span>
@@ -57,6 +60,7 @@ export const OwnRecipes = () => {
   return (
     <NavItem>
       <NavLink tag={Link} to="/own-recipes" className="d-flex align-items-center">
+        <FontAwesomeIcon icon={faFolder} className="me-1" />
         <span>
           <Translate contentKey="global.menu.ownRecipes">Own recipes</Translate>
         </span>
