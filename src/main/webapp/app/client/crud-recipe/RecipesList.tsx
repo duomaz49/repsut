@@ -34,7 +34,9 @@ export default function RecipesList() {
     toggleCreateOrEditModal();
   };
 
-  const filteredRecipes = recipes.filter(recipe => recipe.name.toLowerCase().includes(query.toLowerCase()));
+  const filteredRecipes = recipes.filter(recipe => {
+    return recipe.name.toLowerCase().includes(query.toLowerCase()) || recipe.description.toLowerCase().includes(query.toLowerCase());
+  });
 
   useEffect(() => {
     dispatch(getEntities({}));
@@ -58,7 +60,7 @@ export default function RecipesList() {
             className="recipe-item bg-transparent border-3 border-success rounded-2 mb-2 shadow-sm text-center"
             onClick={() => openRecipeDetailModal(recipe.id)}
           >
-            {recipe?.name}
+            {recipe?.name} - {recipe?.description}
           </ListGroupItem>
         ))}
       </ListGroup>
