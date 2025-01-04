@@ -57,7 +57,7 @@ export default function RecipesList() {
         {filteredRecipes.map((recipe, i) => (
           <ListGroupItem
             key={i}
-            className="recipe-item bg-transparent border-3 border-success rounded-2 mb-2 shadow-sm text-center"
+            className="recipe-item bg-transparent border-2 border-success rounded-2 mb-2 shadow-lg text-center"
             onClick={() => openRecipeDetailModal(recipe.id)}
           >
             {recipe?.name} - {recipe?.description}
