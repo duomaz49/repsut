@@ -19,7 +19,8 @@ enum Unit {
   MILLIGRAM,
   GRAM,
   KILOGRAM,
-  PINCH
+  PINCH,
+  PIECE
 }
 
 entity Ingredient {

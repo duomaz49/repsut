@@ -11,4 +11,5 @@ public enum Unit {
     GRAM,
     KILOGRAM,
     PINCH,
+    PIECE,
 }

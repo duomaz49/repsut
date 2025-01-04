@@ -31,7 +31,7 @@ public class RecipeToIngredient implements Serializable {
     @Column(name = "unit", nullable = false)
     private Unit unit;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Ingredient ingredient;
 
     @ManyToOne(fetch = FetchType.LAZY)

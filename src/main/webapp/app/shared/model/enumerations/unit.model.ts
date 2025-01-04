@@ -12,4 +12,6 @@ export enum Unit {
   KILOGRAM = 'KILOGRAM',
 
   PINCH = 'PINCH',
+
+  PIECE = 'PIECE',
 }
