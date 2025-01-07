@@ -6,8 +6,10 @@
       "namePlaceholder": "Syötä reseptin nimi*",
       "description": "Kuvaus",
       "descriptionPlaceholder": "Syötä reseptin kuvaus",
-      "cookTime": "Valmistusaika",
+      "cookTime": "Valmistusaika minuuteissa",
+      "cookTimePlaceholder": "Syötä reseptin valmistusaika minuutteina",
       "servings": "Annokset",
+      "servingsPlaceholder": "Syötä annosten määrä",
       "instructions": "Ohjeet",
       "instructionsPlaceholder": "Syötä reseptin ohjeet*",
       "submit": "Tallenna"

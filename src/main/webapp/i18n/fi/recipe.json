@@ -8,9 +8,9 @@
         "createOrEditLabel": "Luo tai muokkaa Recipe",
         "notFound": "Recipe ei löytynyt"
       },
-      "created": "Uusi Recipe on luotu, nimi: {{ param }}",
-      "updated": "Recipe on päivitetty, nimi: {{ param }}",
-      "deleted": "Recipe on päivitetty, nimi: {{ param }}",
+      "created": "Uusi Resepti on luotu, nimi: {{ param }}",
+      "updated": "Resepti on päivitetty, nimi: {{ param }}",
+      "deleted": "Resepti on päivitetty, nimi: {{ param }}",
       "delete": {
         "question": "Haluatko varmasti poistaa reseptin {{ name }}?"
       },

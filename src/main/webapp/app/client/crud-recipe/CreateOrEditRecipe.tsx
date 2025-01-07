@@ -23,8 +23,8 @@ export default function CreateOrEditRecipe(props: ICreateOrEditRecipeProps) {
   const [recipe, setRecipe] = useState<IRecipe>({
     name: '',
     description: '',
-    cookTime: 0,
-    servings: 0,
+    cookTime: null,
+    servings: null,
     createdDate: dayjs(),
     instructions: '',
     ...existingRecipe,
