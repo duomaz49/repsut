@@ -8,10 +8,12 @@ import Overlay from 'app/client/utils/Overlay';
 import RecipeCard from 'app/client/crud-recipe/RecipeCard';
 import SearchBar from 'app/client/utils/SearchBar';
 import CreateOrEditRecipe from 'app/client/crud-recipe/CreateOrEditRecipe';
+import SkeletonLoader from 'app/client/utils/SkeletonLoader';
 
 export default function RecipesList() {
   const dispatch = useAppDispatch();
   const recipes = useAppSelector(state => state.recipe.entities);
+  const isLoading = useAppSelector(state => state.recipe.loading);
   const [isRecipeModalOpen, setIsRecipeModalOpen] = useState<boolean>(false);
   const [selectedRecipeId, setSelectedRecipeId] = useState<number>(0);
   const [isCreateOrEditModalOpen, setIsCreateOrEditModalOpen] = useState<boolean>(false);
@@ -44,7 +46,7 @@ export default function RecipesList() {
 
   return (
     <Container fluid className="d-flex flex-column justify-content-center align-items-center">
-      <h1>Your recipes!</h1>
+      <h6 className="text-center mb-4">Your recipes!</h6>
       <SearchBar query={query} setQuery={setQuery} placeholder={'Search for a recipe'} />
       <Button
         color="success"

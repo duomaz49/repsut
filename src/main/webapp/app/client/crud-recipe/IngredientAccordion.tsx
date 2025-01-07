@@ -20,9 +20,9 @@ export default function IngredientAccordion(props: IIngredientAccordionProps) {
   const addAccordion = () => {
     const newIngredient = {
       id: ingredients.length,
-      name: '',
+      name: null,
       quantity: null,
-      unit: '',
+      unit: null,
     };
     setIngredients([...ingredients, newIngredient]);
     setOpen((ingredients.length + 1).toString());
@@ -55,7 +55,7 @@ export default function IngredientAccordion(props: IIngredientAccordionProps) {
             <AccordionHeader targetId={i.toString()}>
               <div className="d-flex justify-content-between align-items-center w-100 me-3">
                 <span>
-                  {ingredient.name ?? null} {ingredient.quantity ?? null} {ingredient.unit.toLowerCase() ?? null}
+                  {ingredient.name ?? 'Name'} {ingredient.quantity ?? ' Quantity'} {ingredient.unit?.toLowerCase() ?? ' Unit'}
                 </span>
                 <div className="btn btn-outline-danger btn-sm ms-3 pointer" role="button" onClick={() => deleteAccordion(ingredient.id)}>
                   <FontAwesomeIcon icon={faTrash} />
