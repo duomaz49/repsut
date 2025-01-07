@@ -1,0 +1,54 @@
+{
+  "clientRecipe": {
+    "createOrEdit": {
+      "createOrEdit": "Create or edit recipe",
+      "name": "Name",
+      "namePlaceholder": "Enter the name of the recipe*",
+      "description": "Description",
+      "descriptionPlaceholder": "Enter a description of the recipe",
+      "cookTime": "Cook time",
+      "servings": "Servings",
+      "instructions": "Instructions",
+      "instructionsPlaceholder": "Enter the instructions for the recipe*",
+      "submit": "Save"
+    },
+    "ingredients": {
+      "addIngredient": "Add Ingredient",
+      "name": "Name",
+      "namePlaceholder": "Enter the name of the ingredient*",
+      "quantity": "Quantity",
+      "quantityPlaceholder": "Enter the quantity of the ingredient*",
+      "unit": "Unit",
+      "unitPlaceholder": "Select the unit of the ingredient*",
+      "units": {
+        "MILLILITER": "ml",
+        "DECILITER": "dl",
+        "LITER": "l",
+        "MILLIGRAM": "mg",
+        "GRAM": "g",
+        "KILOGRAM": "kg",
+        "PINCH": "pinch",
+        "PIECE": "pcs"
+      }
+    },
+    "recipeCard": {
+      "title": "Recipe information",
+      "name": "<strong>Name: </strong>",
+      "information": "<strong>\uD83C\uDFAF Information:</strong>",
+      "servings": "<strong>Servings: {{param}} people</strong>",
+      "cookTime": "<strong>Cook time: {{param}} minutes</strong>",
+      "createdBy": "<strong>Created: </strong>",
+      "categories": "<strong>Categories: </strong>",
+      "description": "<strong>Description: </strong>",
+      "ingredients": "<strong>\uD83D\uDCDD Ingredients:</strong>",
+      "instructions": "<strong>\uD83D\uDCD8 Instructions:</strong>",
+      "deleteButton": "\uD83D\uDDD1\uFE0F Delete recipe",
+      "editButton": "✏\uFE0F Edit Recipe"
+    },
+    "recipeList": {
+      "title": "Your recipes!",
+      "placeholder": "Search for a recipe",
+      "buttonAdd": "Add Recipe"
+    }
+  }
+}

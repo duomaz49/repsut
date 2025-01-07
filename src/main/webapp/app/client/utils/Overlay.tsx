@@ -8,7 +8,7 @@ interface IOverlayProps {
   children?: ReactNode;
   isOpen?: boolean;
   toggle?: () => void;
-  title?: string;
+  title?: ReactNode;
 }
 
 export default function Overlay(props: IOverlayProps) {

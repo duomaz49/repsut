@@ -1,0 +1,9 @@
+{
+  "searchRecipe": {
+    "search": "Hae resepti-inspiraatiota reseptin nimellä",
+    "placeholder": "Hae reseptiä",
+    "searchButton": "Hae",
+    "warning": "Syötä reseptin nimi!",
+    "noResults": "Ei reseptiä annetulla nimellä, yritä uudelleen!"
+  }
+}

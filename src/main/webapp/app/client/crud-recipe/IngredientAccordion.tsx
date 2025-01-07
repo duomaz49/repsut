@@ -3,6 +3,7 @@ import { Accordion, AccordionBody, AccordionHeader, AccordionItem, Button, FormG
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Unit } from 'app/shared/model/enumerations/unit.model';
+import { translate, Translate } from 'react-jhipster';
 
 interface IIngredientAccordionProps {
   ingredients: any[];
@@ -47,7 +48,7 @@ export default function IngredientAccordion(props: IIngredientAccordionProps) {
   return (
     <div>
       <Button color="warning" outline block className="mb-2" onClick={addAccordion}>
-        Add ingredient <FontAwesomeIcon icon={faPlus} />
+        <Translate contentKey="clientRecipe.ingredients.addIngredient">Add ingredient</Translate> <FontAwesomeIcon icon={faPlus} />
       </Button>
       <Accordion open={open} toggle={toggleAccordion} className="mb-2">
         {ingredients.map((ingredient, i) => (
@@ -55,7 +56,13 @@ export default function IngredientAccordion(props: IIngredientAccordionProps) {
             <AccordionHeader targetId={i.toString()}>
               <div className="d-flex justify-content-between align-items-center w-100 me-3">
                 <span>
-                  {ingredient.name ?? 'Name'} {ingredient.quantity ?? ' Quantity'} {ingredient.unit?.toLowerCase() ?? ' Unit'}
+                  {ingredient.name ?? <Translate contentKey="clientRecipe.ingredients.name" />}{' '}
+                  {ingredient.quantity ?? <Translate contentKey="clientRecipe.ingredients.quantity" />}{' '}
+                  {ingredient.unit ? (
+                    <Translate contentKey={`clientRecipe.ingredients.units.${ingredient.unit}`} />
+                  ) : (
+                    <Translate contentKey="clientRecipe.ingredients.unit" />
+                  )}
                 </span>
                 <div className="btn btn-outline-danger btn-sm ms-3 pointer" role="button" onClick={() => deleteAccordion(ingredient.id)}>
                   <FontAwesomeIcon icon={faTrash} />
@@ -65,13 +72,13 @@ export default function IngredientAccordion(props: IIngredientAccordionProps) {
             <AccordionBody accordionId={i.toString()}>
               <FormGroup className="mb-1 px-2 text-start">
                 <Label for="name" className="fw-bold ms-1">
-                  Name*
+                  <Translate contentKey="clientRecipe.ingredients.name">Name</Translate>
                 </Label>
                 <Input
                   id="name"
                   name="name"
                   value={ingredient.name}
-                  placeholder="Name"
+                  placeholder={translate('clientRecipe.ingredients.namePlaceholder')}
                   type="text"
                   onChange={e => handleChange(i, e)}
                   required
@@ -79,13 +86,13 @@ export default function IngredientAccordion(props: IIngredientAccordionProps) {
               </FormGroup>
               <FormGroup className="mb-1 px-2 text-start">
                 <Label for="quantity" className="fw-bold ms-1">
-                  Quantity*
+                  <Translate contentKey="clientRecipe.ingredients.quantity">Quantity</Translate>
                 </Label>
                 <Input
                   id="quantity"
                   name="quantity"
                   value={ingredient.quantity}
-                  placeholder="Quantity"
+                  placeholder={translate('clientRecipe.ingredients.quantityPlaceholder')}
                   type="number"
                   onChange={e => handleChange(i, e)}
                   required
@@ -94,15 +101,22 @@ export default function IngredientAccordion(props: IIngredientAccordionProps) {
 
               <FormGroup className="mb-1 px-2 text-start">
                 <Label for="unit" className="fw-bold ms-1">
-                  Unit
+                  <Translate contentKey="clientRecipe.ingredients.unit">Unit</Translate>
                 </Label>
-                <Input id="unit" name="unit" placeholder="Unit" value={ingredient.unit} type="select" onChange={e => handleChange(i, e)}>
+                <Input
+                  id="unit"
+                  name="unit"
+                  placeholder={translate('clientRecipe.ingredients.unitPlaceholder')}
+                  value={ingredient.unit}
+                  type="select"
+                  onChange={e => handleChange(i, e)}
+                >
                   <option value="" disabled>
-                    Select Unit
+                    <Translate contentKey="clientRecipe.ingredients.unitPlaceholder">Select the unit of the ingredient*</Translate>
                   </option>
                   {Object.values(Unit).map((unit, idx) => (
                     <option key={idx} value={unit}>
-                      {unit.toLowerCase()}
+                      <Translate contentKey={`clientRecipe.ingredients.units.${unit}`} />
                     </option>
                   ))}
                 </Input>

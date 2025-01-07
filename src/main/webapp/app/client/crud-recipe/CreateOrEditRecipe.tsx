@@ -8,6 +8,7 @@ import dayjs from 'dayjs';
 import { createEntity, updateEntity } from 'app/entities/recipe/recipe.reducer';
 import { useAppDispatch } from 'app/config/store';
 import { IRecipeToIngredient } from 'app/shared/model/recipe-to-ingredient.model';
+import { translate, Translate } from 'react-jhipster';
 
 interface ICreateOrEditRecipeProps {
   existingRecipe?: IRecipe;
@@ -75,38 +76,60 @@ export default function CreateOrEditRecipe(props: ICreateOrEditRecipeProps) {
     <Form onSubmit={saveRecipe}>
       <FormGroup>
         <Label for="name" className="fw-bold ms-1">
-          Name
+          <Translate contentKey="clientRecipe.createOrEdit.name">Name</Translate>
         </Label>
-        <Input required id="name" name="name" value={recipe.name} onChange={handleChange} placeholder="Recipe name*" type="text" />
+        <Input
+          required
+          id="name"
+          name="name"
+          value={recipe.name}
+          onChange={handleChange}
+          placeholder={translate('clientRecipe.createOrEdit.namePlaceholder')}
+          type="text"
+        />
       </FormGroup>
       <FormGroup>
         <Label for="description" className="fw-bold ms-1">
-          Description
+          <Translate contentKey="clientRecipe.createOrEdit.description">Description</Translate>
         </Label>
         <Input
           id="description"
           name="description"
           value={recipe.description}
           onChange={handleChange}
-          placeholder="Description"
+          placeholder={translate('clientRecipe.createOrEdit.descriptionPlaceholder')}
           type="text"
         />
       </FormGroup>
       <FormGroup>
         <Label for="cookTime" className="fw-bold ms-1">
-          CookTime
+          <Translate contentKey="clientRecipe.createOrEdit.cookTime">CookTime</Translate>
         </Label>
-        <Input id="cookTime" name="cookTime" value={recipe.cookTime} onChange={handleChange} placeholder="CookTime" type="number" />
+        <Input
+          id="cookTime"
+          name="cookTime"
+          value={recipe.cookTime}
+          onChange={handleChange}
+          placeholder={translate('clientRecipe.createOrEdit.cookTimePlaceholder')}
+          type="number"
+        />
       </FormGroup>
       <FormGroup>
         <Label for="servings" className="fw-bold ms-1">
-          Servings
+          <Translate contentKey="clientRecipe.createOrEdit.servings">Servings</Translate>
         </Label>
-        <Input id="servings" name="servings" value={recipe.servings} onChange={handleChange} placeholder="Servings" type="number" />
+        <Input
+          id="servings"
+          name="servings"
+          value={recipe.servings}
+          onChange={handleChange}
+          placeholder={translate('clientRecipe.createOrEdit.servingsPlaceholder')}
+          type="number"
+        />
       </FormGroup>
       <FormGroup>
         <Label for="instructions" className="fw-bold ms-1">
-          Instructions
+          <Translate contentKey="clientRecipe.createOrEdit.instructions">Instructions</Translate>
         </Label>
         <Input
           required
@@ -114,13 +137,13 @@ export default function CreateOrEditRecipe(props: ICreateOrEditRecipeProps) {
           name="instructions"
           value={recipe.instructions}
           onChange={handleChange}
-          placeholder="Instructions*"
+          placeholder={translate('clientRecipe.createOrEdit.instructionsPlaceholder')}
           type="textarea"
         />
       </FormGroup>
       <IngredientAccordion ingredients={ingredients} setIngredients={setIngredients} />
       <Button outline color="success" block>
-        Submit
+        <Translate contentKey="clientRecipe.createOrEdit.submit">Submit</Translate>
       </Button>
     </Form>
   );

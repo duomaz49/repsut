@@ -1,0 +1,10 @@
+{
+  "randomRecipe": {
+    "buttonRandom": "Get Another Recipe",
+    "buttonVideo": "\uD83D\uDCFA Watch Instruction Video",
+    "ingredients": "\uD83D\uDCDD Ingredients:",
+    "category": "Category:",
+    "cuisine": "Cuisine:",
+    "instructions": "\uD83D\uDCD8 Instructions:"
+  }
+}

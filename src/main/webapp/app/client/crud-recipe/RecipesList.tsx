@@ -8,12 +8,11 @@ import Overlay from 'app/client/utils/Overlay';
 import RecipeCard from 'app/client/crud-recipe/RecipeCard';
 import SearchBar from 'app/client/utils/SearchBar';
 import CreateOrEditRecipe from 'app/client/crud-recipe/CreateOrEditRecipe';
-import SkeletonLoader from 'app/client/utils/SkeletonLoader';
+import { translate, Translate } from 'react-jhipster';
 
 export default function RecipesList() {
   const dispatch = useAppDispatch();
   const recipes = useAppSelector(state => state.recipe.entities);
-  const isLoading = useAppSelector(state => state.recipe.loading);
   const [isRecipeModalOpen, setIsRecipeModalOpen] = useState<boolean>(false);
   const [selectedRecipeId, setSelectedRecipeId] = useState<number>(0);
   const [isCreateOrEditModalOpen, setIsCreateOrEditModalOpen] = useState<boolean>(false);
@@ -46,14 +45,17 @@ export default function RecipesList() {
 
   return (
     <Container fluid className="d-flex flex-column justify-content-center align-items-center">
-      <h6 className="text-center mb-4">Your recipes!</h6>
-      <SearchBar query={query} setQuery={setQuery} placeholder={'Search for a recipe'} />
+      <h6 className="text-center mb-4">
+        <Translate contentKey="clientRecipe.recipeList.title">Your recipes!</Translate>
+      </h6>
+      <SearchBar query={query} setQuery={setQuery} placeholder={translate('clientRecipe.recipeList.placeholder')} />
       <Button
         color="success"
         className="d-flex justify-content-center align-items-center custom-width mb-3"
         onClick={() => openCreateOrEditModal(null)}
       >
-        <FaPlus color="white" className="me-1" /> Add Recipe
+        <FaPlus color="white" className="me-1" />
+        <Translate contentKey="clientRecipe.recipeList.buttonAdd">Add Recipe</Translate>
       </Button>
       <ListGroup className="custom-width">
         {filteredRecipes.map((recipe, i) => (
@@ -66,14 +68,18 @@ export default function RecipesList() {
           </ListGroupItem>
         ))}
       </ListGroup>
-      <Overlay isOpen={isRecipeModalOpen} toggle={toggleRecipeDetailModal} title="Recipe Details">
+      <Overlay isOpen={isRecipeModalOpen} toggle={toggleRecipeDetailModal} title={<Translate contentKey="clientRecipe.recipeCard.title" />}>
         <RecipeCard
           recipe={recipes.find(recipe => recipe.id === selectedRecipeId)}
           toggleRecipeDetailModal={toggleRecipeDetailModal}
           openCreateOrEditModal={openCreateOrEditModal}
         />
       </Overlay>
-      <Overlay isOpen={isCreateOrEditModalOpen} toggle={toggleCreateOrEditModal} title="Create or Edit Recipe">
+      <Overlay
+        isOpen={isCreateOrEditModalOpen}
+        toggle={toggleCreateOrEditModal}
+        title={<Translate contentKey="clientRecipe.createOrEdit.createOrEdit" />}
+      >
         <CreateOrEditRecipe
           existingRecipe={recipes.find(recipe => recipe.id === selectedRecipeId)}
           toggleCreateOrEditModal={toggleCreateOrEditModal}
