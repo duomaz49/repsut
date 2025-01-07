@@ -6,6 +6,8 @@
       "namePlaceholder": "Enter the name of the recipe*",
       "description": "Description",
       "descriptionPlaceholder": "Enter a description of the recipe",
+      "categories": "Categories",
+      "categoriesPlaceholder": "Select the categories of the recipe",
       "cookTime": "Cook time in minutes",
       "cookTimePlaceholder": "Enter the cook time of the recipe in minutes",
       "servings": "Servings",

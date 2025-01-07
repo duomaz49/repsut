@@ -6,9 +6,11 @@ import { IRecipe } from 'app/shared/model/recipe.model';
 import IngredientAccordion from 'app/client/crud-recipe/IngredientAccordion';
 import dayjs from 'dayjs';
 import { createEntity, updateEntity } from 'app/entities/recipe/recipe.reducer';
-import { useAppDispatch } from 'app/config/store';
+import { useAppDispatch, useAppSelector } from 'app/config/store';
 import { IRecipeToIngredient } from 'app/shared/model/recipe-to-ingredient.model';
 import { translate, Translate } from 'react-jhipster';
+import { getEntities as getCategories } from 'app/entities/category/category.reducer';
+import Multiselect from 'multiselect-react-dropdown';
 
 interface ICreateOrEditRecipeProps {
   existingRecipe?: IRecipe;
@@ -19,16 +21,22 @@ export default function CreateOrEditRecipe(props: ICreateOrEditRecipeProps) {
   const dispatch = useAppDispatch();
 
   const { existingRecipe, toggleCreateOrEditModal } = props;
+  const categories = useAppSelector(state => state.category.entities);
   const [ingredients, setIngredients] = useState<any[]>([]);
   const [recipe, setRecipe] = useState<IRecipe>({
     name: '',
     description: '',
-    cookTime: null,
-    servings: null,
+    categories: [],
+    cookTime: undefined,
+    servings: undefined,
     createdDate: dayjs(),
     instructions: '',
     ...existingRecipe,
   });
+
+  useEffect(() => {
+    dispatch(getCategories({}));
+  }, [dispatch]);
 
   useEffect(() => {
     if (existingRecipe) {
@@ -47,6 +55,32 @@ export default function CreateOrEditRecipe(props: ICreateOrEditRecipeProps) {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setRecipe({ ...recipe, [name]: value });
+  };
+
+  const handleCategorySelect = (selectedList: { label: string; value: string }[]) => {
+    // eslint-disable-next-line
+    console.log(selectedList);
+    const selectedCategories = selectedList.map(item => ({
+      id: Number(item.value),
+      name: item.label,
+    }));
+
+    setRecipe({
+      ...recipe,
+      categories: selectedCategories,
+    });
+  };
+
+  const handleCategoryRemove = (selectedList: { label: string; value: string }[]) => {
+    const removedCategories = selectedList.map(item => ({
+      id: Number(item.value),
+      name: item.label,
+    }));
+
+    setRecipe({
+      ...recipe,
+      categories: recipe.categories.filter(category => !removedCategories.some(removed => removed.id === category.id)),
+    });
   };
 
   const saveRecipe = (event: React.FormEvent<HTMLFormElement>) => {
@@ -139,6 +173,26 @@ export default function CreateOrEditRecipe(props: ICreateOrEditRecipeProps) {
           onChange={handleChange}
           placeholder={translate('clientRecipe.createOrEdit.instructionsPlaceholder')}
           type="textarea"
+        />
+      </FormGroup>
+      <FormGroup>
+        <Label for="category" className="fw-bold ms-1" id="category-label">
+          <Translate contentKey="clientRecipe.createOrEdit.categories">Categories</Translate>
+        </Label>
+        <Multiselect
+          options={categories.map(category => ({
+            label: category?.name,
+            value: category?.id,
+          }))}
+          selectedValues={recipe.categories.map(category => ({
+            label: category.name,
+            value: category.id,
+          }))}
+          onSelect={handleCategorySelect}
+          onRemove={handleCategoryRemove}
+          showCheckbox={true}
+          displayValue="label"
+          placeholder={translate('clientRecipe.createOrEdit.categoriesPlaceholder')}
         />
       </FormGroup>
       <IngredientAccordion ingredients={ingredients} setIngredients={setIngredients} />

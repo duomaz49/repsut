@@ -6,6 +6,8 @@
       "namePlaceholder": "Syötä reseptin nimi*",
       "description": "Kuvaus",
       "descriptionPlaceholder": "Syötä reseptin kuvaus",
+      "categories": "Kategoriat",
+      "categoriesPlaceholder": "Valitse reseptin kategoriat",
       "cookTime": "Valmistusaika minuuteissa",
       "cookTimePlaceholder": "Syötä reseptin valmistusaika minuutteina",
       "servings": "Annokset",
