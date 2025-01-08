@@ -58,8 +58,6 @@ export default function CreateOrEditRecipe(props: ICreateOrEditRecipeProps) {
   };
 
   const handleCategorySelect = (selectedList: { label: string; value: string }[]) => {
-    // eslint-disable-next-line
-    console.log(selectedList);
     const selectedCategories = selectedList.map(item => ({
       id: Number(item.value),
       name: item.label,
@@ -71,15 +69,10 @@ export default function CreateOrEditRecipe(props: ICreateOrEditRecipeProps) {
     });
   };
 
-  const handleCategoryRemove = (selectedList: { label: string; value: string }[]) => {
-    const removedCategories = selectedList.map(item => ({
-      id: Number(item.value),
-      name: item.label,
-    }));
-
+  const handleCategoryRemove = (removedItem: { label: string; value: string }) => {
     setRecipe({
       ...recipe,
-      categories: recipe.categories.filter(category => !removedCategories.some(removed => removed.id === category.id)),
+      categories: recipe.categories.filter(category => category.id !== Number(removedItem.value)),
     });
   };
 
@@ -191,6 +184,7 @@ export default function CreateOrEditRecipe(props: ICreateOrEditRecipeProps) {
           onSelect={handleCategorySelect}
           onRemove={handleCategoryRemove}
           showCheckbox={true}
+          hidePlaceholder={true}
           displayValue="label"
           placeholder={translate('clientRecipe.createOrEdit.categoriesPlaceholder')}
         />
