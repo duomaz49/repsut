@@ -155,5 +155,4 @@ Desktop.ini
 ######################
 # Dont want to publish on git.
 ######################
-/coverage/
 .yo-rc.json
