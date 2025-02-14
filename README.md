@@ -18,7 +18,7 @@
 
 - Build Tools: Maven, Webpack
 
-- Containerization: Docker, Docker Compose
+- Containerization: Docker
 
 - Testing: Jest and Junit
 
