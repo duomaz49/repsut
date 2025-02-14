@@ -8,7 +8,9 @@
 
 ##### Repsut utilizes the following technologies:
 
-- Backend: Spring Boot, JHipster
+- Framework: Jhipster
+  
+- Backend: Java, Spring Boot
 
 - Frontend: React, Redux
 
@@ -18,7 +20,7 @@
 
 - Containerization: Docker, Docker Compose
 
-- Testing: Jest, Spring Boot Tests
+- Testing: Jest and Junit
 
 ## Project Structure
 
