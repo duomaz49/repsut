@@ -45,7 +45,7 @@ export default function RecipesList() {
 
   return (
     <Container fluid className="d-flex flex-column justify-content-center align-items-center">
-      <h6 className="text-center mb-4">
+      <h6 className="text-center mb-4 mt-3">
         <Translate contentKey="clientRecipe.recipeList.title">Your recipes!</Translate>
       </h6>
       <SearchBar query={query} setQuery={setQuery} placeholder={translate('clientRecipe.recipeList.placeholder')} />
@@ -61,7 +61,7 @@ export default function RecipesList() {
         {filteredRecipes.map((recipe, i) => (
           <ListGroupItem
             key={i}
-            className="recipe-item bg-transparent border-2 border-success rounded-2 mb-2 shadow-lg text-center"
+            className="recipe-item bg-transparent border-1 border-success rounded-2 mb-2 shadow text-center"
             onClick={() => openRecipeDetailModal(recipe.id)}
           >
             {recipe?.name} - {recipe?.description}

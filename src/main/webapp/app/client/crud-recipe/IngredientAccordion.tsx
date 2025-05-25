@@ -45,6 +45,7 @@ export default function IngredientAccordion(props: IIngredientAccordionProps) {
     setIngredients(newIngredients);
   };
 
+  console.log(ingredients);
   return (
     <div>
       <Button color="warning" outline block className="mb-2" onClick={addAccordion}>

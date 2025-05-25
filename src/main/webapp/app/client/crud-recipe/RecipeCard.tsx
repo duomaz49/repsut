@@ -17,7 +17,7 @@ export default function RecipeCard(props: IRecipeCardProps) {
   const toggleDeleteModal = () => setIsDeleteModalOpen(!isDeleteModalOpen);
 
   return (
-    <Row>
+    <Row className="p-2">
       <h6 className="text-center">
         <Translate contentKey="clientRecipe.recipeCard.name">
           <strong>Name:</strong>{' '}
