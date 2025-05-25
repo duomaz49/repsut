@@ -13,7 +13,7 @@
       "fieldName": "unit",
       "fieldType": "Unit",
       "fieldValidateRules": ["required"],
-      "fieldValues": "MILLILITER,DECILITER,LITER,MILLIGRAM,GRAM,KILOGRAM,PINCH"
+      "fieldValues": "MILLILITER,DECILITER,LITER,MILLIGRAM,GRAM,KILOGRAM,PINCH,PIECE"
     }
   ],
   "name": "RecipeToIngredient",

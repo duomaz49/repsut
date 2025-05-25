@@ -1,0 +1,58 @@
+{
+  "clientRecipe": {
+    "createOrEdit": {
+      "createOrEdit": "Luo tai muokkaa reseptiä",
+      "name": "Nimi",
+      "namePlaceholder": "Syötä reseptin nimi*",
+      "description": "Kuvaus",
+      "descriptionPlaceholder": "Syötä reseptin kuvaus",
+      "categories": "Kategoriat",
+      "categoriesPlaceholder": "Valitse reseptin kategoriat",
+      "cookTime": "Valmistusaika minuuteissa",
+      "cookTimePlaceholder": "Syötä reseptin valmistusaika minuutteina",
+      "servings": "Annokset",
+      "servingsPlaceholder": "Syötä annosten määrä",
+      "instructions": "Ohjeet",
+      "instructionsPlaceholder": "Syötä reseptin ohjeet*",
+      "submit": "Tallenna"
+    },
+    "ingredients": {
+      "addIngredient": "Lisää raaka-aine",
+      "name": "Nimi",
+      "namePlaceholder": "Syötä ainesosan nimi*",
+      "quantity": "Määrä",
+      "quantityPlaceholder": "Syötä ainesosan määrä*",
+      "unit": "Yksikkö",
+      "unitPlaceholder": "Valitse ainesosan yksikkö*",
+      "units": {
+        "MILLILITER": "ml",
+        "DECILITER": "dl",
+        "LITER": "l",
+        "MILLIGRAM": "mg",
+        "GRAM": "g",
+        "KILOGRAM": "kg",
+        "PINCH": "ripaus",
+        "PIECE": "kpl"
+      }
+    },
+    "recipeCard": {
+      "title": "Reseptin tiedot",
+      "name": "<strong>Nimi: </strong>",
+      "information": "<strong>\uD83C\uDFAF Tiedot:</strong>",
+      "servings": "<strong>Annokset:</strong> {{param}} henkilöä",
+      "cookTime": "<strong>Valmistusaika:</strong> {{param}} minuuttia",
+      "createdBy": "<strong>Luotu: </strong>",
+      "categories": "<strong>Kategoria: </strong>",
+      "description": "<strong>Kuvaus: </strong>",
+      "ingredients": "<strong>\uD83D\uDCDD Raaka-aineet:</strong>",
+      "instructions": "<strong>\uD83D\uDCD8 Ohjeet:</strong>",
+      "deleteButton": "\uD83D\uDDD1\uFE0F Poista resepti",
+      "editButton": "✏\uFE0F Muokkaa reseptiä"
+    },
+    "recipeList": {
+      "title": "Sinun reseptisi!",
+      "placeholder": "Hae reseptiä",
+      "buttonAdd": "Lisää resepti"
+    }
+  }
+}

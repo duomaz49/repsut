@@ -2,17 +2,17 @@ import '../clientcss.css';
 
 import React from 'react';
 
-interface SkeletonLoaderProps {
+interface ISkeletonLoaderProps {
   length: number;
 }
 
-export default function SkeletonLoader(props: SkeletonLoaderProps) {
+export default function SkeletonLoader(props: ISkeletonLoaderProps) {
   const { length } = props;
   return (
-    <p className="placeholder-glow mt-4">
+    <div className="custom-width">
       {Array.from({ length }).map((_, i) => (
-        <span key={i} className="placeholder col-12 bg-success m-2 shadow"></span>
+        <span key={i} className="placeholder w-100 bg-success m-2 shadow"></span>
       ))}
-    </p>
+    </div>
   );
 }

@@ -3,7 +3,7 @@ entity Recipe {
   description String
   instructions TextBlob required
   cookTime Integer
-  servings Integer required
+  servings Integer
   createdDate Instant required
 }
 
@@ -19,7 +19,8 @@ enum Unit {
   MILLIGRAM,
   GRAM,
   KILOGRAM,
-  PINCH
+  PINCH,
+  PIECE
 }
 
 entity Ingredient {

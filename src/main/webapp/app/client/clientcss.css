@@ -1,5 +1,29 @@
-.cursor-pointer {
+.pointer {
   cursor: pointer;
+}
+
+.recipe-item {
+  cursor: pointer;
+}
+
+.recipe-item:hover {
+  background-color: #d4edda !important;
+}
+
+.chip {
+  background: #24a428 !important;
+}
+
+.highlightOption {
+  background-color: #24a428 !important;
+}
+
+.option:hover {
+  background-color: #24a428 !important;
+}
+
+.selected {
+  background-color: #24a428 !important;
 }
 
 .mobile {

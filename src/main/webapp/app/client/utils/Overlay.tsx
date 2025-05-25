@@ -4,21 +4,20 @@ import React from 'react';
 import type { ReactNode } from 'react';
 import { Modal, ModalHeader, ModalBody } from 'reactstrap';
 
-interface OverlayProps {
+interface IOverlayProps {
   children?: ReactNode;
   isOpen?: boolean;
   toggle?: () => void;
-  title?: string;
+  title?: ReactNode;
 }
 
-export default function Overlay(props: OverlayProps) {
+export default function Overlay(props: IOverlayProps) {
   const { children, isOpen, toggle, title } = props;
   return (
     <Modal id="fancybox" isOpen={isOpen} toggle={toggle} keyboard={false}>
       <ModalHeader toggle={toggle}>{title}</ModalHeader>
       <ModalBody
         style={{
-          maxHeight: 'calc(100vh - 210px)',
           overflowY: 'auto',
           overflowX: 'hidden',
         }}

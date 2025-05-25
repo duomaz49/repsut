@@ -16,6 +16,7 @@ import PageNotFound from 'app/shared/error/page-not-found';
 import { AUTHORITIES } from 'app/config/constants';
 import RandomRecipe from 'app/client/random-recipe/RandomRecipe';
 import SearchRecipe from 'app/client/search-recipe/SearchRecipe';
+import RecipesList from 'app/client/crud-recipe/RecipesList';
 
 const loading = <div>loading ...</div>;
 
@@ -81,6 +82,14 @@ const AppRoutes = props => {
           element={
             <PrivateRoute hasAnyAuthorities={[AUTHORITIES.USER]}>
               <SearchRecipe />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="own-recipes/*"
+          element={
+            <PrivateRoute hasAnyAuthorities={[AUTHORITIES.USER]}>
+              <RecipesList />
             </PrivateRoute>
           }
         />

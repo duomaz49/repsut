@@ -1,0 +1,9 @@
+{
+  "searchRecipe": {
+    "search": "Search for a recipe inspiration by recipe name",
+    "placeholder": "Search for a recipe",
+    "searchButton": "Search",
+    "warning": "Please enter a recipe name!",
+    "noResults": "No recipe found with given name, please search again!"
+  }
+}

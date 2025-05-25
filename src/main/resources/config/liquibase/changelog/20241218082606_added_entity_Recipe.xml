@@ -27,7 +27,7 @@
                 <constraints nullable="true" />
             </column>
             <column name="servings" type="integer">
-                <constraints nullable="false" />
+                <constraints nullable="true" />
             </column>
             <column name="created_date" type="${datetimeType}">
                 <constraints nullable="false" />

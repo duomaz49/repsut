@@ -18,7 +18,7 @@
     "enableTranslation": true,
     "entities": ["Category", "Ingredient", "Recipe", "RecipeToIngredient"],
     "feignClient": null,
-    "jhipsterVersion": "8.7.3",
+    "jhipsterVersion": "8.7.1",
     "jwtSecretKey": "MDQxODdiZjY1NDk3OTI1ZDViYzcxM2ZkOTRiYWYxYjk2ZmZlZDQyZDYxNGZmN2ZiN2YxZGI3ZTE5NjgzOTY4NWEzYjA5MmFlM2EyZjNiZjc4MWY5MjY5NTM5OGZkMWUyYTg0ZTA3OWRkOWNhOGFhOTM1OThkNzVjNGJmNWRlYzA=",
     "languages": ["en", "fi"],
     "lastLiquibaseTimestamp": 1734510367000,

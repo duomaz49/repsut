@@ -8,7 +8,8 @@
       "MILLIGRAM": "MILLIGRAM",
       "GRAM": "GRAM",
       "KILOGRAM": "KILOGRAM",
-      "PINCH": "PINCH"
+      "PINCH": "PINCH",
+      "PIECE": "PIECE"
     }
   }
 }

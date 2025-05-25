@@ -1,0 +1,10 @@
+{
+  "randomRecipe": {
+    "buttonRandom": "Hae toinen resepti",
+    "buttonVideo": "\uD83D\uDCFA Katso ohjevideo",
+    "ingredients": "\uD83D\uDCDD Raaka-aineet:",
+    "category": "Kategoria:",
+    "cuisine": "Ruokakulttuuri:",
+    "instructions": "\uD83D\uDCD8 Ohjeet:"
+  }
+}
